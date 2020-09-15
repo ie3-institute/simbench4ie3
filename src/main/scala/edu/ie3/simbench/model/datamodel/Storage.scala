@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.datamodel
 
 import edu.ie3.simbench.model.datamodel.enums.StorageType
@@ -29,17 +34,17 @@ final case class Storage(
     node: Node,
     storageType: StorageType,
     profile: StorageProfile,
-    p: BigDecimal,
-    q: BigDecimal,
-    soc: BigDecimal,
-    sR: BigDecimal,
-    eStore: BigDecimal,
-    etaStore: BigDecimal,
-    selfDischarge: BigDecimal,
-    pMin: BigDecimal,
-    pMax: BigDecimal,
-    qMin: BigDecimal,
-    qMax: BigDecimal,
+    p: Double,
+    q: Double,
+    soc: Double,
+    sR: Double,
+    eStore: Double,
+    etaStore: Double,
+    selfDischarge: Double,
+    pMin: Double,
+    pMax: Double,
+    qMin: Double,
+    qMax: Double,
     subnet: String,
     voltLvl: Int
 ) extends ShuntModel

@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert.types
 
 import java.util.UUID
@@ -89,7 +94,7 @@ class Transformer2wTypeConverterSpec extends UnitSpec with ConverterTestData {
     }
 
     "throw an exception, when the input model does not allow to calculate short circuit parameters correctly" in {
-      val invalidInput = validInput.copy(pCu = BigDecimal("3000"))
+      val invalidInput = validInput.copy(pCu = 3000)
       val thrown = intercept[ConversionException](
         Transformer2wTypeConverter.convert(invalidInput, uuid)
       )
@@ -99,7 +104,7 @@ class Transformer2wTypeConverterSpec extends UnitSpec with ConverterTestData {
     }
 
     "throw an exception, when the input model does not allow to calculate no load circuit parameters correctly" in {
-      val invalidInput = validInput.copy(pFe = BigDecimal("1000"))
+      val invalidInput = validInput.copy(pFe = 1000)
       val thrown = intercept[ConversionException](
         Transformer2wTypeConverter.convert(invalidInput, uuid)
       )

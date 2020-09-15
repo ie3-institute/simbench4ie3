@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert
 
 import edu.ie3.simbench.model.datamodel.profiles.{
@@ -15,18 +20,10 @@ class PowerPlantConverterSpec extends UnitSpec with ConverterTestData {
         "test profile",
         PowerPlantProfileType.PowerPlantProfile1,
         Map(
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:00") -> BigDecimal(
-            "0.75"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:15") -> BigDecimal(
-            "0.55"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:30") -> BigDecimal(
-            "0.35"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:45") -> BigDecimal(
-            "0.15"
-          )
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:00") -> 0.75,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:15") -> 0.55,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:30") -> 0.35,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:45") -> 0.15
         )
       )
       val (actual, _) = PowerPlantConverter.convert(input, node, pProfile)
@@ -45,18 +42,10 @@ class PowerPlantConverterSpec extends UnitSpec with ConverterTestData {
         "test profile",
         PowerPlantProfileType.PowerPlantProfile1,
         Map(
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:00") -> BigDecimal(
-            "0.75"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:15") -> BigDecimal(
-            "0.55"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:30") -> BigDecimal(
-            "0.35"
-          ),
-          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:45") -> BigDecimal(
-            "0.15"
-          )
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:00") -> 0.75,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:15") -> 0.55,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:30") -> 0.35,
+          simbenchTimeUtil.toZonedDateTime("01.01.1990 00:45") -> 0.15
         )
       )
       val (actual, _) = PowerPlantConverter.convert(input, node, pProfile)

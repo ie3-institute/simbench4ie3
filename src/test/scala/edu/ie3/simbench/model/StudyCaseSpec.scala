@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.model.datamodel.StudyCase
@@ -34,21 +39,21 @@ class StudyCaseSpec extends UnitSpec {
   val expected = Vector(
     StudyCase(
       "hW",
-      BigDecimal("1"),
-      BigDecimal("1"),
-      BigDecimal("1"),
-      BigDecimal("0.8"),
-      BigDecimal("1"),
-      BigDecimal("0.965")
+      1,
+      1,
+      1,
+      0.8,
+      1,
+      0.965
     ),
     StudyCase(
       "hPV",
-      BigDecimal("1"),
-      BigDecimal("1"),
-      BigDecimal("0.85"),
-      BigDecimal("0.95"),
-      BigDecimal("1"),
-      BigDecimal("0.965")
+      1,
+      1,
+      0.85,
+      0.95,
+      1,
+      0.965
     )
   )
 

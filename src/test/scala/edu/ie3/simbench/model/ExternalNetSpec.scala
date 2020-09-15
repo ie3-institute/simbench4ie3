@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -74,7 +79,7 @@ class ExternalNetSpec extends UnitSpec with ConverterTestData {
       "MV1.101 grid at LV1.101",
       getNodePair("MV1.101 Bus 4")._1,
       CalculationType.VaVm,
-      BigDecimal("1"),
+      1,
       None,
       None,
       "LV1.101_MV1.101_eq",
@@ -83,23 +88,23 @@ class ExternalNetSpec extends UnitSpec with ConverterTestData {
     Ward(
       "MV1.101 grid at LV1.101",
       getNodePair("MV1.101 Bus 4")._1,
-      BigDecimal("1"),
+      1,
       None,
       None,
-      BigDecimal("100.0"),
-      BigDecimal("200.0"),
+      100.0,
+      200.0,
       "LV1.101_MV1.101_eq",
       5
     ),
     WardExtended(
       "MV1.101 grid at LV1.101",
       getNodePair("MV1.101 Bus 4")._1,
-      BigDecimal("1"),
+      1,
       None,
       None,
-      BigDecimal("1.0"),
-      BigDecimal("2.0"),
-      BigDecimal("3.0"),
+      1.0,
+      2.0,
+      3.0,
       "LV1.101_MV1.101_eq",
       5
     )

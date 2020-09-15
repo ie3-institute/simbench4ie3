@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.profile
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -35,9 +40,9 @@ class PowerPlantProfileSpec extends UnitSpec {
       PowerPlantProfileType.PowerPlantProfile16,
       Map(
         TimeUtil.withDefaults
-          .toZonedDateTime("2016-01-01 00:00:00") -> BigDecimal("0.7"),
+          .toZonedDateTime("2016-01-01 00:00:00") -> 0.7,
         TimeUtil.withDefaults
-          .toZonedDateTime("2016-01-01 00:15:00") -> BigDecimal("0.7")
+          .toZonedDateTime("2016-01-01 00:15:00") -> 0.7
       )
     ),
     PowerPlantProfile(
@@ -45,9 +50,9 @@ class PowerPlantProfileSpec extends UnitSpec {
       PowerPlantProfileType.PowerPlantProfile17,
       Map(
         TimeUtil.withDefaults
-          .toZonedDateTime("2016-01-01 00:00:00") -> BigDecimal("0.7"),
+          .toZonedDateTime("2016-01-01 00:00:00") -> 0.7,
         TimeUtil.withDefaults
-          .toZonedDateTime("2016-01-01 00:15:00") -> BigDecimal("0.7")
+          .toZonedDateTime("2016-01-01 00:15:00") -> 0.7
       )
     )
   )

@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -61,14 +66,14 @@ class PowerPlantSpec extends UnitSpec with ConverterTestData {
       PowerPlantType("hard coal"),
       PowerPlantProfileType("pp_75"),
       CalculationType("pvm"),
-      BigDecimal("1"),
-      BigDecimal("778"),
+      1,
+      778,
       None,
-      BigDecimal("818.947"),
-      BigDecimal("50"),
-      BigDecimal("778"),
-      BigDecimal("-255.716"),
-      BigDecimal("255.716"),
+      818.947,
+      50,
+      778,
+      -255.716,
+      255.716,
       "EHV1",
       1
     ),
@@ -78,14 +83,14 @@ class PowerPlantSpec extends UnitSpec with ConverterTestData {
       PowerPlantType("hard coal"),
       PowerPlantProfileType("pp_76"),
       CalculationType("pvm"),
-      BigDecimal("1"),
-      BigDecimal("449"),
-      Some(BigDecimal("-42")),
-      BigDecimal("472.632"),
-      BigDecimal("50"),
-      BigDecimal("449"),
-      BigDecimal("-147.579"),
-      BigDecimal("147.579"),
+      1,
+      449,
+      Some(-42),
+      472.632,
+      50,
+      449,
+      -147.579,
+      147.579,
       "EHV1",
       1
     )

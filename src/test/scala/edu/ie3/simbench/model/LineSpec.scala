@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -51,8 +56,8 @@ class LineSpec extends UnitSpec with ConverterTestData {
       getNodePair("LV1.101 Bus 4")._1,
       getNodePair("LV1.101 Bus 1")._1,
       getACLineTypes("NAYY 4x150SE 0.6/1kV")._1,
-      BigDecimal("0.132499"),
-      BigDecimal("100"),
+      0.132499,
+      100,
       "LV1.101",
       7
     ),
@@ -61,8 +66,8 @@ class LineSpec extends UnitSpec with ConverterTestData {
       getNodePair("LV1.101 Bus 1")._1,
       getNodePair("LV1.101 Bus 4")._1,
       getACLineTypes("24-AL1/4-ST1A 20.0")._1,
-      BigDecimal("0.132499"),
-      BigDecimal("100"),
+      0.132499,
+      100,
       "LV1.101",
       7
     )

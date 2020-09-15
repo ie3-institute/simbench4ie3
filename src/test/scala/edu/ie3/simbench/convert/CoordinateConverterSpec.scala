@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert
 
 import edu.ie3.datamodel.models.input.NodeInput
@@ -13,8 +18,8 @@ class CoordinateConverterSpec extends UnitSpec {
       val input = Some(
         Coordinate(
           "random coordinate",
-          BigDecimal("7.412262"),
-          BigDecimal("51.492689"),
+          7.412262,
+          51.492689,
           "subnet_1",
           7
         )

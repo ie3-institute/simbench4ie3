@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert.profiles
 
 import java.util.UUID
@@ -27,7 +32,7 @@ case object PowerProfileConverter {
     * @return         A [[IndividualTimeSeries]] with [[SValue]] (active and reactive power) for each time step
     */
   def convert(
-      profileModel: ProfileModel[_ <: ProfileType, (BigDecimal, BigDecimal)],
+      profileModel: ProfileModel[_ <: ProfileType, (Double, Double)],
       pRated: ComparableQuantity[Power],
       qRated: ComparableQuantity[Power]
   ): IndividualTimeSeries[SValue] = {
@@ -51,7 +56,7 @@ case object PowerProfileConverter {
     * @return         A [[IndividualTimeSeries]] with active and reactive power for each time step
     */
   def convert(
-      profileModel: ProfileModel[_ <: ProfileType, BigDecimal],
+      profileModel: ProfileModel[_ <: ProfileType, Double],
       pRated: ComparableQuantity[Power]
   ): IndividualTimeSeries[PValue] = {
     val values = profileModel.profile.map {

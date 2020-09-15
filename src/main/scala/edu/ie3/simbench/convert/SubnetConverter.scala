@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert
 
 import edu.ie3.simbench.convert.SubnetConverter.RatedVoltId
@@ -96,7 +101,7 @@ final case class SubnetConverter(ratedVoltageIdPairs: Vector[RatedVoltId]) {
     * @param id           Identifier of the subnet
     * @return Int representation of the SimBench sub net
     */
-  def convert(ratedVoltage: BigDecimal, id: String): Int = {
+  def convert(ratedVoltage: Double, id: String): Int = {
     id match {
       case SubnetConverter.validSimbenchSubnetId(
           firstSubnetId,
@@ -135,7 +140,7 @@ final case class SubnetConverter(ratedVoltageIdPairs: Vector[RatedVoltId]) {
 }
 
 case object SubnetConverter {
-  type RatedVoltId = (BigDecimal, String)
+  type RatedVoltId = (Double, String)
 
   /**
     * Valid subnet ids are of one of the following forms:

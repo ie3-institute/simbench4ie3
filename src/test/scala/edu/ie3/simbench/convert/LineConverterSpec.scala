@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert
 
 import java.util.{Objects, UUID}
@@ -22,8 +27,8 @@ class LineConverterSpec extends UnitSpec with ConverterTestData {
     nodeAIn,
     nodeBIn,
     getDCLineTypes("dc line type")._1,
-    BigDecimal("100"),
-    BigDecimal("100"),
+    100,
+    100,
     "subnet 1",
     7
   )

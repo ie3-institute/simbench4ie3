@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -44,9 +49,9 @@ class LoadSpec extends UnitSpec with ConverterTestData {
       "LV1.101 Load 8",
       getNodePair("LV1.101 Bus 1")._1,
       LoadProfileType.L2A,
-      BigDecimal("0.014"),
-      BigDecimal("0.005533"),
-      BigDecimal("0.0150538"),
+      0.014,
+      0.005533,
+      0.0150538,
       "LV1.101",
       7
     ),
@@ -54,9 +59,9 @@ class LoadSpec extends UnitSpec with ConverterTestData {
       "LV1.101 Load 9",
       getNodePair("LV1.101 Bus 1")._1,
       LoadProfileType.H0G,
-      BigDecimal("0.014"),
-      BigDecimal("0.005533"),
-      BigDecimal("0.0150538"),
+      0.014,
+      0.005533,
+      0.0150538,
       "LV1.101",
       7
     )

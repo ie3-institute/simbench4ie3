@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.datamodel
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -36,7 +41,7 @@ final case class Transformer3W(
     tapPosLV: Int,
     autoTap: Boolean,
     autoTapSide: BranchElementPort,
-    loadingMax: BigDecimal,
+    loadingMax: Double,
     substation: Substation,
     subnet: String,
     voltLvl: Int

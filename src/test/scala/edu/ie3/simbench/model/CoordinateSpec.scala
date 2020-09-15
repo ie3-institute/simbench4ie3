@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.model.datamodel.Coordinate
@@ -30,15 +35,15 @@ class CoordinateSpec extends UnitSpec {
   val expected = Vector(
     Coordinate(
       "coord_3",
-      BigDecimal("11.4097"),
-      BigDecimal("53.6413"),
+      11.4097,
+      53.6413,
       "LV1.101",
       7
     ),
     Coordinate(
       "coord_14",
-      BigDecimal("11.4097"),
-      BigDecimal("53.6413"),
+      11.4097,
+      53.6413,
       "MV1.101_LV1.101_Feeder1",
       5
     )

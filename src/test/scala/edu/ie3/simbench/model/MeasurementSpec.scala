@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -27,8 +32,8 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         getNodePair("LV1.101 Bus 4")._1,
         getNodePair("LV1.101 Bus 1")._1,
         getACLineTypes("NAYY 4x150SE 0.6/1kV")._1,
-        BigDecimal("0.132499"),
-        BigDecimal("100"),
+        0.132499,
+        100,
         "LV1.101",
         7
       )
@@ -42,18 +47,18 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         getNodePair("LV1.101 Bus 4")._1,
         Transformer2WType(
           "0.16 MVA 20/0.4 kV DOTE 160/20  SGB",
-          BigDecimal("0.16"),
-          BigDecimal("20"),
-          BigDecimal("0.4"),
-          BigDecimal("150"),
-          BigDecimal("4"),
-          BigDecimal("2.35"),
-          BigDecimal("0.46"),
-          BigDecimal("0.28751"),
+          0.16,
+          20,
+          0.4,
+          150,
+          4,
+          2.35,
+          0.46,
+          0.28751,
           tapable = true,
           BranchElementPort.HV,
-          BigDecimal("2.5"),
-          BigDecimal("0"),
+          2.5,
+          0,
           0,
           -2,
           2
@@ -61,7 +66,7 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         0,
         autoTap = true,
         Some(BranchElementPort.HV),
-        BigDecimal("100"),
+        100,
         Some(Substation("substation_1", "LV1.101", 7)),
         "LV1.101",
         6
@@ -119,8 +124,8 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         getNodePair("LV1.101 Bus 4")._1,
         getNodePair("LV1.101 Bus 1")._1,
         getACLineTypes("NAYY 4x150SE 0.6/1kV")._1,
-        BigDecimal("0.132499"),
-        BigDecimal("100"),
+        0.132499,
+        100,
         "LV1.101",
         7
       ),
@@ -137,18 +142,18 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         getNodePair("LV1.101 Bus 4")._1,
         Transformer2WType(
           "0.16 MVA 20/0.4 kV DOTE 160/20  SGB",
-          BigDecimal("0.16"),
-          BigDecimal("20"),
-          BigDecimal("0.4"),
-          BigDecimal("150"),
-          BigDecimal("4"),
-          BigDecimal("2.35"),
-          BigDecimal("0.46"),
-          BigDecimal("0.28751"),
+          0.16,
+          20,
+          0.4,
+          150,
+          4,
+          2.35,
+          0.46,
+          0.28751,
           tapable = true,
           BranchElementPort.HV,
-          BigDecimal("2.5"),
-          BigDecimal("0"),
+          2.5,
+          0,
           0,
           -2,
           2
@@ -156,7 +161,7 @@ class MeasurementSpec extends UnitSpec with ConverterTestData {
         0,
         autoTap = true,
         Some(BranchElementPort.HV),
-        BigDecimal("100"),
+        100,
         Some(Substation("substation_1", "LV1.101", 7)),
         "LV1.101",
         6

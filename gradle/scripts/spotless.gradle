@@ -15,6 +15,7 @@ spotless {
 	//sets a license header, removes unused imports and formats conforming to the scala fmt formatter
 	scala {
 		scalafmt()
+		licenseHeader ie3LicHead, "package.*\\n"
 	}
 
 	/* cf. https://github.com/diffplug/spotless/tree/master/plugin-gradle */

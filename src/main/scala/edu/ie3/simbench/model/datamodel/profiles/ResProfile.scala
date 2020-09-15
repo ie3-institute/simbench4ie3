@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.datamodel.profiles
 
 import java.time.ZonedDateTime
@@ -19,10 +24,10 @@ import edu.ie3.util.TimeUtil
 final case class ResProfile(
     id: String,
     profileType: ResProfileType,
-    profile: Map[ZonedDateTime, BigDecimal]
-) extends ProfileModel[ResProfileType, BigDecimal]
+    profile: Map[ZonedDateTime, Double]
+) extends ProfileModel[ResProfileType, Double]
 
-case object ResProfile extends ProfileCompanionObject[ResProfile, BigDecimal] {
+case object ResProfile extends ProfileCompanionObject[ResProfile, Double] {
   private val PV1 = "PV1"
   private val PV2 = "PV2"
   private val PV3 = "PV3"
@@ -137,7 +142,7 @@ case object ResProfile extends ProfileCompanionObject[ResProfile, BigDecimal] {
       /* Get the active and reactive power for each available load profile */
       for (typeString <- profileTypeStrings) yield {
         val profileType = ResProfileType(typeString)
-        val factor = rawTableLine.getBigDecimal(typeString)
+        val factor = rawTableLine.getDouble(typeString)
         (profileType, time, factor)
       }
     }).flatten /* Flatten everything to have Vector((profileType, time, factor)) */

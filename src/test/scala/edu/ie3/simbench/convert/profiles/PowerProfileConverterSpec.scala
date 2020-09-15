@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.convert.profiles
 
 import edu.ie3.datamodel.models.value.{PValue, SValue}
@@ -24,29 +29,13 @@ class PowerProfileConverterSpec extends UnitSpec {
     LoadProfileType.H0L,
     Map(
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:00:00") -> (BigDecimal(
-        "0.75"
-      ), BigDecimal(
-        "0.85"
-      )),
+        .toZonedDateTime("1990-01-01 00:00:00") -> (0.75, 0.85),
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:15:00") -> (BigDecimal(
-        "0.55"
-      ), BigDecimal(
-        "0.75"
-      )),
+        .toZonedDateTime("1990-01-01 00:15:00") -> (0.55, 0.75),
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:30:00") -> (BigDecimal(
-        "0.35"
-      ), BigDecimal(
-        "0.65"
-      )),
+        .toZonedDateTime("1990-01-01 00:30:00") -> (0.35, 0.65),
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:45:00") -> (BigDecimal(
-        "0.15"
-      ), BigDecimal(
-        "0.55"
-      ))
+        .toZonedDateTime("1990-01-01 00:45:00") -> (0.15, 0.55)
     )
   )
 
@@ -55,21 +44,13 @@ class PowerProfileConverterSpec extends UnitSpec {
     PowerPlantProfileType.PowerPlantProfile1,
     Map(
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:00:00") -> BigDecimal(
-        "0.75"
-      ),
+        .toZonedDateTime("1990-01-01 00:00:00") -> 0.75,
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:15:00") -> BigDecimal(
-        "0.55"
-      ),
+        .toZonedDateTime("1990-01-01 00:15:00") -> 0.55,
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:30:00") -> BigDecimal(
-        "0.35"
-      ),
+        .toZonedDateTime("1990-01-01 00:30:00") -> 0.35,
       TimeUtil.withDefaults
-        .toZonedDateTime("1990-01-01 00:45:00") -> BigDecimal(
-        "0.15"
-      )
+        .toZonedDateTime("1990-01-01 00:45:00") -> 0.15
     )
   )
 

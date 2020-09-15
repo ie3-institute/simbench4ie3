@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.datamodel.profiles
 import java.time.ZonedDateTime
 
@@ -11,5 +16,5 @@ import java.time.ZonedDateTime
 final case class StorageProfile(
     id: String,
     profileType: StorageProfileType,
-    profile: Map[ZonedDateTime, (BigDecimal, BigDecimal)]
-) extends ProfileModel[StorageProfileType, (BigDecimal, BigDecimal)]
+    profile: Map[ZonedDateTime, (Double, Double)]
+) extends ProfileModel[StorageProfileType, (Double, Double)]

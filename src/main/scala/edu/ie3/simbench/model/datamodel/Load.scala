@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.model.datamodel
 
 import edu.ie3.simbench.exception.io.SimbenchDataModelException
@@ -23,9 +28,9 @@ final case class Load(
     id: String,
     node: Node,
     profile: LoadProfileType,
-    pLoad: BigDecimal,
-    qLoad: BigDecimal,
-    sR: BigDecimal,
+    pLoad: Double,
+    qLoad: Double,
+    sR: Double,
     subnet: String,
     voltLvl: Int
 ) extends ShuntModel
@@ -83,9 +88,9 @@ case object Load extends EntityModelCompanionObject[Load] {
   def buildModel(rawData: RawModelData, node: Node): Load = {
     val (id, subnet, voltLvl) = getBaseInformation(rawData)
     val profileType = LoadProfileType(rawData.get(PROFILE))
-    val p = rawData.getBigDecimal(P_LOAD)
-    val q = rawData.getBigDecimal(Q_LOAD)
-    val sRated = rawData.getBigDecimal(S_RATED)
+    val p = rawData.getDouble(P_LOAD)
+    val q = rawData.getDouble(Q_LOAD)
+    val sRated = rawData.getDouble(S_RATED)
     Load(id, node, profileType, p, q, sRated, subnet, voltLvl)
   }
 }

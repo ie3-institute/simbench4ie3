@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.main
 
 import edu.ie3.datamodel.io.FileNamingStrategy
@@ -15,14 +20,12 @@ import scala.jdk.CollectionConverters._
   */
 object RunSimbench extends SimbenchHelper {
   def main(args: Array[String]): Unit = {
-    printOpener()
-
     logger.info("Parsing the config")
     val (_, config) = prepareConfig(args)
     val simbenchConfig = SimbenchConfig(config)
 
     simbenchConfig.io.simbenchCodes.foreach { simbenchCode =>
-      logger.info(s"Downloading data set '$simbenchCode' from SimBench website")
+      logger.info(s"$simbenchCode - Downloading data set from SimBench website")
       val downloader =
         Downloader(simbenchConfig.io.downloadFolder, simbenchConfig.io.baseUrl)
       val downloadedFile =
@@ -37,7 +40,7 @@ object RunSimbench extends SimbenchHelper {
       val dataFolder =
         Downloader.unzip(downloader, downloadedFile, flattenDirectories = true)
 
-      logger.info(s"Reading in the SimBench data set '$simbenchCode'")
+      logger.info(s"$simbenchCode - Reading in the SimBench data set")
       val simbenchReader = SimbenchReader(
         simbenchCode,
         dataFolder,
@@ -47,11 +50,11 @@ object RunSimbench extends SimbenchHelper {
       )
       val simbenchModel = simbenchReader.readGrid()
 
-      logger.info(s"Converting '$simbenchCode' to PowerSystemDataModel")
+      logger.info(s"$simbenchCode - Converting to PowerSystemDataModel")
       val (jointGridContainer, timeSeries, powerFlowResults) =
         GridConverter.convert(simbenchCode, simbenchModel)
 
-      logger.info(s"Writing converted data set '$simbenchCode' to files")
+      logger.info(s"$simbenchCode - Writing converted data set to files")
       val targetFolderPath = "[/\\\\]$|(?<![/\\\\])$".r.replaceAllIn(
         IoUtils.harmonizeFileSeparator(simbenchConfig.io.output.targetFolder),
         "/" + simbenchCode
@@ -63,8 +66,11 @@ object RunSimbench extends SimbenchHelper {
         false,
         simbenchConfig.io.output.csv.separator
       )
+      logger.debug(s"$simbenchCode - Persist grid structure")
       csvSink.persistJointGrid(jointGridContainer)
+      logger.debug(s"$simbenchCode - Persist time series")
       timeSeries.foreach(csvSink.persistTimeSeries(_))
+      logger.debug(s"$simbenchCode - Persist power flow results")
       csvSink.persistAll(powerFlowResults.asJava)
     }
   }

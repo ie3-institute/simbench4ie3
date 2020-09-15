@@ -1,3 +1,8 @@
+/*
+ * © 2020. TU Dortmund University,
+ * Institute of Energy Systems, Energy Efficiency and Energy Economics,
+ * Research group Distribution grid planning and operation
+*/
 package edu.ie3.simbench.main
 
 import com.typesafe.config.{ConfigFactory, Config => TypesafeConfig}
@@ -49,26 +54,5 @@ trait SimbenchHelper extends LazyLogging {
       .resolve()
 
     (parsedArgs, config)
-  }
-
-  def printOpener(): Unit = {
-    println(
-      "   _____ _           ____                  _    _  _   _____ _____ __  __  ____  _   _"
-    )
-    println(
-      "  / ____(_)         |  _ \\                | |  | || | / ____|_   _|  \\/  |/ __ \\| \\ | |   /"
-    )
-    println(
-      "  | (___  _ _ __ ___ | |_) | ___ _ __   ___| |__| || || (___   | | | \\  / | |  | |  \\| |  /  \\"
-    )
-    println(
-      "  \\___ \\| | '_ ` _ \\|  _ < / _ \\ '_ \\ / __| '_ \\__   _\\___ \\  | | | |\\/| | |  | | . ` | / /\\ \\"
-    )
-    println(
-      "  ____) | | | | | | | |_) |  __/ | | | (__| | | | | | ____) |_| |_| |  | | |__| | |\\  |/ ____ \\"
-    )
-    println(
-      "  |_____/|_|_| |_| |_|____/ \\___|_| |_|\\___|_| |_| |_||_____/|_____|_|  |_|\\____/|_| \\_/_/    \\_\\"
-    )
   }
 }
